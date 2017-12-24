@@ -1,31 +1,65 @@
+/*********************************************************************
+* Config.h
+*
+* Copyright (C)    2017   [DFRobot](http://www.dfrobot.com),
+* GitHub Link :https://github.com/KnowFlow/KnowFlow_AWM
+*
+* Description:Configure File for the Whole code-set:
+* (default setting)
+* 
+* SD: SDUPDATEDATATIME
+* DO: DOPIN  A0
+* EC: ECPIN  A1
+* PH: PHPIN  A2
+* ORP:ORPPIN A3
+* TEMP:TEMPPIN 5
+*
+* pH_offset: PHOFFSET 0.12
+* EC: ECKVALUE 0.6
+*
+* author  :  Jason(jason.ling@dfrobot.com)Frankie(zhujuncheng1021@163.com)
+* version :  V1.1
+* date    :  2017-12-24
+**********************************************************************/
+
+// åœ¨å¤´æ–‡ä»¶çš„æœ€å¼€å§‹åŠ å…¥è¿™æ¡æŒ‡ä»¤å°±èƒ½å¤Ÿä¿è¯å¤´æ–‡ä»¶è¢«ç¼–è¯‘ä¸€æ¬¡
+// add the command to the very front of the head file 
+// to make sure the file be compiled for once
 #pragma once
 
-//´®¿Ú´òÓ¡¿ª¹Ø
+//ä¸²å£æ‰“å°å¼€å…³
+//serial monitor switch
 #define DEBUG_AVR
 //#define DEBUG_M0
 
-//´«¸ĞÆ÷ÂË²¨Êı×éµÄ×î´ó³¤¶È
+//ä¼ æ„Ÿå™¨æ»¤æ³¢æ•°ç»„çš„æœ€å¤§é•¿åº¦
+//MAX array length
 #define ARRAYLENGTH 10
 
-//SD¿¨¸üĞÂÊı¾İµÄÊ±¼ä£¬60000Îª1·ÖÖÓ
+//SDå¡æ›´æ–°æ•°æ®çš„æ—¶é—´ï¼Œ60000ä¸º1åˆ†é’Ÿ
+//the update time of the sd-card(60000ms=1min)
 #define SDUPDATEDATATIME 60000
 
-//´«¸ĞÆ÷µÄÒı½ÅÉèÖÃ
+//ä¼ æ„Ÿå™¨çš„å¼•è„šè®¾ç½®
+//sensor PINs setting
 #define DOPIN  A0
 #define ECPIN  A1
 #define PHPIN  A2
 #define ORPPIN A3
 #define TEMPPIN 5
 
-//ÉèÖÃ´«¸ĞÆ÷Æ«ÒÆÁ¿£¨Ğ£×¼Êı¾İ£©
+//è®¾ç½®ä¼ æ„Ÿå™¨åç§»é‡ï¼ˆæ ¡å‡†æ•°æ®ï¼‰
+//calibration parametres for sensors
 #define PHOFFSET 0.12
 #define ECKVALUE 0.6
 
 
-//´«¸ĞÆ÷×î´ó¸öÊı
+//ä¼ æ„Ÿå™¨æœ€å¤§ä¸ªæ•°
+//MAX sensor number
 #define SENSORCOUNT 5
 
-//´«¸ĞÆ÷¶ÔÓ¦Êı×é±àºÅ£¬ph=0£¬temperature=1...,×î´ó±àºÅÎªSENSORCOUNT-1
+//ä¼ æ„Ÿå™¨å¯¹åº”æ•°ç»„ç¼–å·ï¼Œph=0ï¼Œtemperature=1...,æœ€å¤§ç¼–å·ä¸ºSENSORCOUNT-1
+//number the sensors and storage in an array, have pH=0, temperature=1...the MAX number equals SENSORCOUNT-1
 enum SensorNumber
 {
 	phSensor = 0,

@@ -4,8 +4,8 @@
 * Copyright (C)    2017   [DFRobot](http://www.dfrobot.com),
 * GitHub Link :https://github.com/KnowFlow/KnowFlow_AWM
 *
-* Description:Configure File for the Whole code-set:
-* (default setting)
+* Description:
+* Configure File with default settings
 * 
 * SD: SDUPDATEDATATIME
 * DO: DOPIN  A0

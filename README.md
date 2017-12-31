@@ -61,6 +61,31 @@ It should be solve the problem.
 
 https://publiclab.org/notes/shanlter/06-08-2017/knowflow-automatic-water-meter
 
+## How to run the code after you download the zip file
+	
+	Baseline Version
+	ArduinoUnoGravityDo and ArduinoUnoDo are the latest baseline version
+	for two different type of DO(Dissolved Oxygen) sensor.
+	And here is a tutorial for how to run code in ArduinoUnoGravityDo/.
+	You can do exactly the same thing to ArduinoUnoDo/.
+
+	Firmware Folder
+	Firmware/ is for the developers.
+
+Tutorial
+
+1, unzip it!
+
+2, open KnowFlow_AWM/ArduinoUnoGravityDo/WaterMonitorDo/Config.h
+
+3, setup the configure file (make any necessary change to this file)
+
+4, change directory to KnowFlow_AWM/ArduinoUnoGravityDo/WaterMonitorDo/
+
+5, double click WaterMonitorDo.ino(or open it in Arduino IDE)
+
+6, Compile and upload file to Arduino Uno
+
 ## contributors:
 
 1, Fork it!

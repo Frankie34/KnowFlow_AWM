@@ -41,17 +41,25 @@ GravityDo::~GravityDo()
 
 }
 
-void GravityDo::setPin(int pin)
-{
-    this->_pin = pin;
-	pinMode(this->_pin, INPUT);
-   
-}
+//********************************************************************************************
+//
+//void GravityDo::setPin(int pin)
+//{
+//    this->_pin = pin;
+//	pinMode(this->_pin, INPUT);
+//   
+//}
+//********************************************************************************************
+
 void GravityDo::setTemperature(float temperature)
 {
     this->_temperature = temperature;
 }
 
+//********************************************************************************************
+// function name: setup ()
+// Function Description: Initializes the sensor
+//********************************************************************************************
 void GravityDo::setup()
 {
 	pinMode(this->_pin, INPUT);
@@ -59,6 +67,10 @@ void GravityDo::setup()
 
 extern uint16_t readMedianValue(int* dataArray, uint16_t arrayLength);
 
+//********************************************************************************************
+// function name: update ()
+// Function Description: Update the sensor value
+//********************************************************************************************
 void GravityDo::update()
 {
 	int analogBuffer[ARRAYLENGTH];
@@ -72,12 +84,19 @@ void GravityDo::update()
 	this->_averageVoltage = readMedianValue(analogBuffer, ARRAYLENGTH) * (float)this->_vref / 1024.0; // read the value more stable by the median filtering algorithm
 	this->_doValue = pgm_read_float_near(&SaturationValueTab[0] + (int)(this->_saturationDoTemperature + 0.5)) * this->_averageVoltage / this->_saturationDoVoltage;  //calculate the do value, doValue = Voltage / this->_saturationDoVoltage * SaturationDoValue(with temperature compensation)
 }
-
+//********************************************************************************************
+// function name: getValue ()
+// Function Description: Returns the sensor data
+//********************************************************************************************
 double GravityDo::getValue()
 {
     return this->_doValue;
 }
 
+//********************************************************************************************
+// function name: getTemperature ()
+// Function Description: Returns the temperature data
+//********************************************************************************************
 float GravityDo::getTemperature() const
 {
     return this->_temperature;

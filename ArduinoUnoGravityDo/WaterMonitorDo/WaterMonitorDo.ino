@@ -15,7 +15,7 @@
 * Software Environment: Arduino IDE 1.8.2
 * Software download link: https://www.arduino.cc/en/Main/Software
 *
-* Install the library file£º
+* Install the library fileï¼š
 * Copy the files from the github repository folder libraries to the libraries
 * in the Arduino IDE 1.8.2 installation directory
 *
@@ -26,7 +26,7 @@
 * ORP : A3
 * RTC : I2C
 * DO  : A0
-* GravityDO£ºA4
+* GravityDOï¼šA4
 * temperature:D5
 *
 * SD card attached to SPI bus as follows:
@@ -55,15 +55,20 @@ GravityRtc rtc;
 
 // sensor monitor
 GravitySensorHub sensorHub;
+
+// sd module
 SdService sdService = SdService(sensorHub.sensors);
 
 void setup() {
 		
 	Serial.begin(9600);
+	
 	rtc.setup();
+
 	sensorHub.setup();
 
-	//ÉèÖÃÏàÓ¦´«¸ÐÆ÷Ð£×¼Êý¾ÝµÄÆ«ÒÆÁ¿
+	// set offset value for calibration
+	//è®¾ç½®ç›¸åº”ä¼ æ„Ÿå™¨æ ¡å‡†æ•°æ®çš„åç§»é‡
 	((GravityPh*)(sensorHub.sensors[phSensor]))->setOffset(PHOFFSET);
 	((GravityEc*)(sensorHub.sensors[ecSensor]))->setKValue(ECKVALUE);
 
@@ -85,13 +90,15 @@ void setup() {
 
 
 void loop() {
+
 	sensorHub.update();
+
 	sdService.update();
 
 	// ************************* Serial debugging ******************
 	//if(millis() - updateTime > 2000)
 	//{
-	/*updateTime = millis();
+	/*updateTime = millis();                            //Function Description:Show the time since the power on
 	Serial.print(F("ph= "));
 	Serial.print(sensorHub.getValueBySensorNumber(phSensor));
 	Serial.print(F("  Temp= "));
@@ -120,7 +127,7 @@ void loop() {
 //Serial.println(sensorHub.getValueBySensorNumber(ecSensor));
 
 
-// ************************************************************ time ********************** **********
+// ************************************************************ time ********************************
 //Serial.print("   Year = ");//year
 //Serial.print(rtc.year);
 //Serial.print("   Month = ");//month
@@ -135,5 +142,3 @@ void loop() {
 //Serial.print(rtc.minute);
 //Serial.print("   Second = ");//second
 //Serial.println(rtc.second);
-
-

@@ -17,16 +17,18 @@
 
 
 #include "GravitySensorHub.h"
+
 #include "GravityPh.h"
 #include "GravityOrp.h"
 #include "GravityEc.h"
 #include "GravityTemperature.h"
 #include "GravityDo.h"
+
 #include "Config.h"
 
 //********************************************************************************************
-// function name: sensors []
-// Function Description: Store the array of sensors
+// Array name: sensors []
+// Description: Store the array of sensors
 // Parameters: 0 ph sensor
 // Parameters: 1 temperature sensor
 // Parameters: 2 Dissolved oxygen sensor

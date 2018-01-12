@@ -45,12 +45,15 @@ public:
 	GravityOrp();
 	~GravityOrp();
 
+	//initialize
 	//初始化传感器
 	void setup();
 
+	//update sensor value
 	//更新传感器数据
 	void update();
 
+	//get sensor value
 	//获取传感器数据
 	double getValue();
 };

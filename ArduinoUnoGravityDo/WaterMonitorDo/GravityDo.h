@@ -11,11 +11,23 @@ public:
 	~GravityDo();
 
 public:
+
+    //initialization
 	void setup();
+
+    //update senser value
 	void update();
+
+    //set sensor pin
     void setPin(int pin);
+
+    //get sensor data
 	double getValue();
+
+    //get temperature value
     float getTemperature() const;
+
+    //set temperature value
     void setTemperature(float temperature);
 
 private:

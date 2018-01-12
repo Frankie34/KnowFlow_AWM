@@ -35,7 +35,7 @@ GravityRtc::~GravityRtc()
 
 //********************************************************************************************
 // function name: setup ()
-// Function Description: Initializes the sensor
+// Function Description: Initializes the module
 //********************************************************************************************
 void GravityRtc::setup()
 {

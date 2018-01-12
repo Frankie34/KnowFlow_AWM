@@ -40,6 +40,7 @@ private:
 public:
 	GravityPh();
 	~GravityPh() {};
+	
 	// initialization
 	void  setup ();
 

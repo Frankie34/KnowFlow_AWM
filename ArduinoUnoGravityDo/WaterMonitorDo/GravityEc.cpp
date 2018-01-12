@@ -12,12 +12,20 @@ GravityEc::~GravityEc()
 {
 }
 
+//********************************************************************************************
+// function name: setup ()
+// Function Description: Initializes the sensor
+//********************************************************************************************
 void GravityEc::setup()
 {
 	pinMode(pin, INPUT);
 }
 
 
+//********************************************************************************************
+// function name: update ()
+// Function Description: Update the sensor value
+//********************************************************************************************
 void GravityEc::update()
 {
 	int ecValueBuffer[ARRAYLENGTH];
@@ -32,6 +40,10 @@ void GravityEc::update()
 
 }
 
+//********************************************************************************************
+// function name: getValue ()
+// Function Description: Returns the sensor data
+//********************************************************************************************
 double GravityEc::getValue()
 {
 	return this->ecValue;

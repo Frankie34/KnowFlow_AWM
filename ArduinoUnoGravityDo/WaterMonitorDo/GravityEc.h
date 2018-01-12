@@ -8,9 +8,17 @@ public:
 	~GravityEc();
 
 public:
+
+	//initialize
 	void setup();
+
+	//update sensor value
 	void update();
+
+	//get sensor value
 	double getValue();
+
+	//###################
 	void setKValue(float value);
 
 	int pin;

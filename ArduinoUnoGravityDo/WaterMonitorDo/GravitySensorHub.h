@@ -20,9 +20,11 @@
 #include "Config.h"
 /*
 sensors :
-0,ph
-1,ec
-2.orp
+	phSensor,
+	temperatureSensor,
+	doSensor,
+	ecSensor,
+	orpSensor
 */
 class GravitySensorHub
 {
@@ -31,8 +33,8 @@ private:
 
 public:
 	//********************************************************************************************
-	// function name: sensors []
-	// Function Description: Store the array of sensors
+	// Array name: sensors []
+	// Description: Store the array of sensors
 	// Parameters: 0 ph sensor
 	// Parameters: 1 temperature sensor
 	// Parameters: 2 Dissolved oxygen sensor
